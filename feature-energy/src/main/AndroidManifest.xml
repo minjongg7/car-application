@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- 추가 앱 ①: 메인 앱 안의 화면 (왼쪽 레일에서 진입). 별도 런처 아이콘/태스크를 두면 Pleos 하단 바에 같은 앱 아이콘이 중복으로 떠서 제거. -->
+        <activity
+            android:name="com.hmgapps.energy.ui.EnergyHubActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:icon="@drawable/ic_energy_hub"
+            android:label="Energy Trading Hub" />
+    </application>
+</manifest>

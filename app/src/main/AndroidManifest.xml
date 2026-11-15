@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 차량 속도(피로도 입력): AAOS CarPropertyManager PERF_VEHICLE_SPEED 용. Pleos 공식 튜토리얼 매니페스트와 같은 권한 이름.
+         런타임 승인 필요(MainActivity 에서 요청). 변경(CONTROL_*) 권한은 사용하지 않음. -->
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+
+    <!-- 내비 경로 요청(NaviHelper.requestRoute). 이름은 NaviHelper 2.0.3 문서 기준이므로 3.0.5 에서는
+         requestRoute 의 @RequiresPermission 로 재확인할 것 (사전 승인 목록에 없는 권한은 심사 탈락 가능). -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE" />
+    <!-- NaviHelper 3.0.5: requestRoute / addWaypoint / cancelRoute / requestReRoute / changeRouteOption 에 필요
+         (SDK 소스 @RequiresPermission, Protection level: Normal → 선언만 하면 허용). Pleos 사전 승인 범위인지 제출 전에 확인. -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE_SEARCH" />
+
+    <!-- 내장 내비(OSM): 경로(OSRM)·검색(Photon/Nominatim)·지도 타일을 인터넷에서 받는다. normal 권한(설치 시 자동 허용).
+         Pleos 사전 승인 범위인지 제출 전에 확인할 것. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 위치(휴게소 추천): 표준 Android 위치. 앱 시작 시 동의(위치 사용)가 켜져 있으면 런타임 권한을 요청한다. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_navi"
+        android:label="FatigueGuard Pro"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+        <!-- android.car 공유 라이브러리. required=false 라서 일반 기기에서도 설치/실행된다 (Mock 동작). -->
+        <uses-library android:name="android.car" android:required="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pleos Vehicle SDK 읽기 권한. 모두 protection level "normal" (설치 시 자동 허용, 런타임 팝업 없음).
+         CONTROL_* / PRIVATE_* (쓰기·시스템 전용) 권한은 쓰지 않는다. -->
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />   <!-- 배터리 SoC·충전구·전비 -->
+    <uses-permission android:name="pleos.car.permission.CAR_INFO" />     <!-- 배터리 용량 -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />    <!-- 주행가능거리·주행시간·기어 -->
+    <uses-permission android:name="pleos.car.permission.CAR_SAFETY" />   <!-- 브레이크액 레벨 -->
+</manifest>
