@@ -16,7 +16,7 @@
 ## 1. 실행 방법
 
 ### APK로 바로 실행
-1. [Releases](https://github.com/minjongg7/car-application/releases/tag/v0.6.0)에서 `차량용 앱_v0.6.0.apk`를 받습니다.
+1. [Releases](https://github.com/minjongg7/car-application/releases/tag/naviya)에서 `차량용 앱_v0.6.0.apk`를 받습니다.
 2. Pleos Connect 에뮬레이터를 켠 뒤 APK 파일을 에뮬레이터 창에 끌어다 놓거나 아래 명령으로 설치합니다.
    ```bash
    adb install "차량용 앱_v0.6.0.apk"
