@@ -89,7 +89,7 @@ SDK는 `settings.gradle.kts`에 등록된 Pleos Maven 저장소(`https://nexus-p
 
 ## 4. APK 파일 위치
 
-- **GitHub Release**: https://github.com/minjongg7/car-application/releases/tag/v0.6.0
+- **GitHub Release**: https://github.com/minjongg7/car-application/releases/tag/naviya
 - **직접 빌드 시**: `app/build/outputs/apk/debug/app-debug.apk`
   (Android Studio › Build › Assemble 'app' Run Configuration)
 
